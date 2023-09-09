@@ -1,0 +1,14 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": "off",
+    "no-console": "off",
+    "func-names": "off",
+    "default-case": "off"
+  },
+  "env": {
+    "browser": true
+  }
+}
