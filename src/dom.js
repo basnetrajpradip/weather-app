@@ -6,8 +6,12 @@ let place = "Kathmandu";
 // DOM Elements
 const searchBar = document.querySelector(".search-bar");
 const searchBtn = document.querySelector(".search-btn");
+const loading = document.querySelector(".loading");
+const errorSection = document.querySelector(".error-section");
+const errorMsg = document.querySelector(".error-msg");
+const currentContainer = document.querySelector(".current-data");
+const forecastContainer = document.querySelector(".forecast-data-container");
 const tempToggle = document.querySelector(".temp-checkbox");
-const toggleSec = document.querySelector(".temp-toggle");
 const locationInfo = document.querySelector(".location");
 const date = document.querySelector(".date");
 const weatherIcon = document.querySelector(".weather-icon");
@@ -24,7 +28,6 @@ const sunsetInfo = document.querySelector(".sunset-data");
 const uvInfo = document.querySelector(".uv-data");
 const rainInfo = document.querySelector(".rain-data");
 const moonInfo = document.querySelector(".moon-data");
-const day1 = document.querySelector(".day1");
 const day2 = document.querySelector(".day2");
 const day3 = document.querySelector(".day3");
 const forecastIcons = document.querySelectorAll(".forecast-icon");
@@ -192,10 +195,19 @@ function updateDom(weatherData) {
 
 async function handleWeatherData() {
   try {
+    currentContainer.classList.add("hidden");
+    forecastContainer.classList.add("hidden");
+    loading.classList.remove("hidden");
+    errorSection.classList.add("hidden");
     const weatherData = await requestCurrentData(place);
     updateDom(weatherData);
+    loading.classList.add("hidden");
+    currentContainer.classList.remove("hidden");
+    forecastContainer.classList.remove("hidden");
   } catch (error) {
-    console.error("Error:", error);
+    loading.classList.add("hidden");
+    errorSection.classList.remove("hidden");
+    errorMsg.textContent = error.message;
   }
 }
 

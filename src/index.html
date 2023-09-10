@@ -48,6 +48,44 @@
           <div class="fahrenheit">°F</div>
         </div>
       </div>
+      <div class="loading hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          style="
+            margin: auto;
+            background: none;
+            display: block;
+            shape-rendering: auto;
+          "
+          width="204px"
+          height="204px"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            fill="none"
+            stroke="#0e2d44"
+            stroke-width="13"
+            r="35"
+            stroke-dasharray="164.93361431346415 56.97787143782138"
+          >
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              repeatCount="indefinite"
+              dur="1.2048192771084336s"
+              values="0 50 50;360 50 50"
+              keyTimes="0;1"
+            ></animateTransform>
+          </circle>
+        </svg>
+      </div>
+      <div class="error-section">
+        <div class="error-msg">Error: No search results found !</div>
+      </div>
       <div class="current-data">
         <div class="location-hero">
           <div class="location"></div>
@@ -130,7 +168,7 @@
           </div>
         </div>
       </div>
-      <div class="forecast-data">
+      <div class="forecast-data-container">
         <div class="forecast-header">Daily Forecast</div>
         <div class="forecast-data">
           <table class="forecast-table">

@@ -317,7 +317,7 @@ input:checked + .slider:before {
   width: 2.5rem;
 }
 
-.forecast-data {
+.forecast-data-container {
   display: flex;
   gap: 1.2rem;
   flex-direction: column;
@@ -386,4 +386,29 @@ td img {
 
 .very-high {
   background-color: var(--warning-veryhigh);
+}
+
+.loading svg {
+  width: 5rem;
+  position: relative;
+  top: -5rem;
+}
+
+.error-msg {
+  font-size: 1.5rem;
+  color: var(--white);
+  background-color: var(--dark-blue);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: fit-content;
+  border-radius: 5rem;
+}
+
+.error-section {
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
 }
